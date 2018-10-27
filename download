@@ -1,0 +1,19 @@
+<html>
+<head><style>body
+{background-color:powderblue;
+ }</style>
+<title>downloading required assets</title>
+<body> 
+<h2 style="font-family:verdana;">
+You can download the required material here.
+<br><br>
+<center><p title="click on the image which takes you to the site for downloading it">For spark</p><br>
+<a href="https://intellipaat.com/tutorial/https://intellipaat.com/tutorial/tutorial-spark-tutorial/downloading-spark-and-getting-started/"><img src="spark.jpeg"></a>
+<br><br>
+<p title="click on the image which takes you to the site for downloading it">For Hadoop</p><br>
+<a href="xyz.com"><img src="hadoop.png"></a><br><br>
+<p title="click on the image which takes you to the site for downloading it">For Ansible</p><br><br>
+<a href="xyz.com"><img src="ansible.png"></a><br>
+</centre>
+</body>
+</html>

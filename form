@@ -1,0 +1,32 @@
+<html>
+<head>
+<title>
+HTML Forms
+</title>
+<link rel="stylesheet" href="style.css">
+<body>
+<div class="Login-page">
+<div class="form">
+<form class="registeration-form"><center>
+Username:<input type="text" placeholder="username"/><br><br>
+Password:<input type="text" placeholder="Password"/><br><br>
+Confirm Password:<input type="text" placeholder="Enter the password again"/><br><br>
+Email_Id:<input type="text" placeholder="Enter your email id"/><br><br><br>
+<button> Create </button>
+<p class="message">Already registered? <a href="#">Login</a><br><br>
+<form class="login-form">
+Username:<input type="text" placeholder="username"/><br><br>
+Password:<input type="text" placeholder="Password"/><br><br>
+<button> Login </button>
+<p class="message">Not registered? <a href="#">Register</a>
+<!--<h2 style="font-family:open sans">REGISTER/LOGIN </h2>
+<form action="/action_page.php" method="post">
+Username:<input type="text" name="Username" value="Enter your username"><br><br>
+Password:<input type="password" name="password" value="Enter the password"><br><br><br>
+Login <input type="submit" name="Login">
+ -->
+</center>
+</head>
+</body>
+</html>
+
