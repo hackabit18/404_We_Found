@@ -1,0 +1,26 @@
+- hosts: 192.168.43.182
+  tasks:
+  - name: "downloading hadoop"
+    command: wget https://archive.apache.org/dist/hadoop/core/hadoop-2.7.3/hadoop-2.7.3.tar.gz
+    args:
+        chdir: /root/
+  - name: "downloading spark"
+    command: wget https://d3kbcqa49mib13.cloudfront.net/spark-2.2.0-bin-hadoop2.7.tgz
+    args:    
+        chdir: /root/
+  - name: "unziping spark"
+    command: tar -xvf spark-2.2.0-bin-hadoop2.7.tgz
+    args:
+        chdir: /root/
+  - name: "unzipping hadoop"
+    command: tar -xvf hadoop-2.7.3.tar.gz
+    args:
+        chdir: /root/
+  - name: "moving spark"
+    command: mv spark-2.2.0-bin-hadoop2.7 spark
+    args:
+       chdir: /root/
+  - name: "moving hadoop"
+    command: mv hadoop-2.7.3 hadoop 
+    args:
+       chdir: /root/

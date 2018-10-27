@@ -1,0 +1,8 @@
+- host: 192.168.43.182
+  tasks:
+  - name: "editing .bashrc file"
+    lineinfile:
+         path: /root/.bashrc
+         insertafter: EOF
+         line: "export HADOOP_HOME=/root/hadoop\n export HADOOP_CONF_DIR=/root/hadoop/etc/hadoop\n export PATH=$PATH:/root/hadoop/bin \n export PATH=$PATH:/root/hadoop/sbin \n export PATH=/root/spark/bin:$PATH \n export SPARK_HOME=/root/spark \n export LD_LIBRARY_PATH=/root/hadoop/lib/native:$LD_LIBRARY_PATH \n export PATH=/root/spark/bin:$PATH \n export HIVE_HOME=/hive/apache-hive-23.3-bin/ \n export PATH=/hive/apache-hive-2.3.3-bin/:$PATH"
+

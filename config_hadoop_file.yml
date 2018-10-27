@@ -1,0 +1,35 @@
+- hosts: 192.168.43.182
+  tasks:
+   - name: "configuring core-site.xml"
+     lineinfile:
+           path: /root/hadoop/etc/hadoop/core-site.xml
+           regexp: '^<property>'
+           state: present
+           line: "<property>\n<name>fs.default.name</name>\n<value>hdfs://192.168.43.182:9001</value>\n</property>"
+           insertafter: '^<configuration>'
+           
+   - name: "configuring hdfs-site.xml"
+     lineinfile:
+             path: /root/hadoop/etc/hadoop/hdfs-site.xml
+             regexp: '^<property>'
+             state: present
+             line: "<property>\n<name>dfs.data/dir</name>\n<value>/data</value>\n</property>"
+             insertafter: "^<configuration>"
+   - name: "comfiguring mapred-site.xml"
+     command: mv /root/hadoop/etc/hadoop/mapred-site.xml.template mapred-site.xml
+   - name: "editing mapred file"     
+     lineinfile:
+           path: /root/hadoop/etc/hadoop/mapred-site.xml
+           regexp: '^<property>'
+           state: present
+           line: <property>\n<name>mapreduce.framework.name</name>\n<value>yarn</value>\n</property>
+           insertafter: "^<configuration>"
+   - name: "configuring file yarn-site.xml"
+     
+     lineinfile:
+             path: /root/hadoop/etc/hadoop/yarn-site.xml
+             regexp: '^<property>'
+             state: present
+             line: <property>\n<name>yarn.acl.enable</name>\n<value>0</value>\n</property>\n<property>\n<name>yarn.resourcemanager.hostname</name>\n<value>namenode.example.com</value>\n</property>\n<property>\n<name>yarn.nodemanager.aux-services</name>\n<value>mapreduce_shuffle</value>\n</property>\n<property>\n<name>yarn.nodemanager.pmem-check-enabled</name>\n<value>flase</value>\n</property>\n<property>\n<name>yarn.nodemanager.vmem-check-enabled</name>\n<value>false</value>\n</property>\n
+             insertafter: "^<configuration>"
+              
